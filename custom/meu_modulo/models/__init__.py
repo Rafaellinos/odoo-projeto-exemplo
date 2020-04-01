@@ -1,0 +1,1 @@
+from . import meu_modelo

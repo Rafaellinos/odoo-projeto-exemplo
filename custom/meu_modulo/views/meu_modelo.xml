@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <act_window
+        id="meu_modelo_action"
+        name="Minha acao"
+        res_model="meu.modelo"/>
+
+    <menuitem
+        id="meu_modelo_menu"
+        name="Meu menu"
+        action="meu_modelo_action"
+        parent=""
+        sequence="5"/>
+
+    <record id="meu_modelo_view_form" model="ir.ui.view">
+        <field name="name">Meu modulo</field>
+        <field name="model">meu.modelo</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="cpf"/>
+                        <field name="date"/>
+                    </group>
+                    <group>
+                        <field name="partner_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="meu_modelo_view_tree" model="ir.ui.view">
+        <field name="name">Meu modulo</field>
+        <field name="model">meu.modelo</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="cpf"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="meu_modelo_view_search" model="ir.ui.view">
+        <field name="name">Meu modulo</field>
+        <field name="model">meu.modelo</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="cpf"/>
+                <field name="date"/>
+                <field name="partner_ids"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>
