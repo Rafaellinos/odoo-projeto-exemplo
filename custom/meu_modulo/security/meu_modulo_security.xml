@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.model.access" id="meu_modelo_access_name"> <!-- TODO acl id -->
+    <record model="ir.model.access" id="meu_modelo_access_name">
         <field name="name">meu.modelo access name</field>
         <field name="model_id" ref="model_meu_modelo"/>
         <field name="group_id" ref="base.group_user"/> <!-- Grupo usuário interno -->
