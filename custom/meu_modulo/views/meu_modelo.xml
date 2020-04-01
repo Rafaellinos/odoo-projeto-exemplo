@@ -18,6 +18,9 @@
         <field name="model">meu.modelo</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button string="Imprmir" type="object" name="imprimit" class="btn-primary"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="name"/>

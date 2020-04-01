@@ -15,3 +15,7 @@ class MeuModelo(models.Model):
     partner_ids = fields.Many2many(
         string="Contato",
         comodel_name='res.partner')
+
+    def imprimit(self):
+        print(str(self.name))
+        return True
