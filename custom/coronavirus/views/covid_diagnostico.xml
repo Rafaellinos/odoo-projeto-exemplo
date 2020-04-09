@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="covid_diagnostico_action" model="ir.actions.act_window">
+        <field name="name">Diagnostico</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">covid.diagnostico</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="covid_diagnostico_form" model="ir.ui.view">
+        <field name="name">covid.diagnostico.view.form</field>
+        <field name="model">covid.diagnostico</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state"
+                           widget="statusbar"
+                            options="{'clickable': '1'}"/>
+                    <button type="object" string="Imprimir"
+                            name="imprimir" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group name="esquerda">
+                            <field name="name"/>
+                            <field name="paciente_id"/>
+                        </group>
+                        <group name="direita">
+                            <field name="medico_id"/>
+                            <field name="data_diagnostico"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="sintomas_ids" widget="many2many_checkboxes"/>
+                        <field name="comorbidade_ids"
+                               widget="many2many_tags"
+                               options="{'no_create': True, 'no_open': True}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="covid_diagnostico_view_tree" model="ir.ui.view">
+        <field name="name">covid.diagnostico.view.tree</field>
+        <field name="model">covid.diagnostico</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="paciente_id"/>
+                <field name="medico_id"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

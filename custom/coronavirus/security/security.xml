@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.model.access" id="covid_comorbidade_access_name">
+        <field name="name">sintomas access name</field>
+        <field name="model_id" ref="model_covid_comorbidade"/>
+        <field name="group_id" ref="base.group_user"/> <!-- Grupo usuário interno -->
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+    <record model="ir.model.access" id="covid_diagnostico_access_name">
+        <field name="name">ficha paciente access name</field>
+        <field name="model_id" ref="model_covid_diagnostico"/>
+        <field name="group_id" ref="base.group_user"/> <!-- Grupo usuário interno -->
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record model="ir.model.access" id="covid_sintomas_access_name">
+        <field name="name">ficha paciente access name</field>
+        <field name="model_id" ref="model_covid_sintomas"/>
+        <field name="group_id" ref="base.group_user"/> <!-- Grupo usuário interno -->
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="corona_virus_action" model="ir.actions.act_window">
+        <field name="name">Comorbidades</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">covid.comorbidade</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="covid_comorbidade_form" model="ir.ui.view">
+        <field name="name">covid.comorbidade.view.form</field>
+        <field name="model">covid.comorbidade</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="codigo_sid"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="covid_comorbidade_view_tree" model="ir.ui.view">
+        <field name="name">covid.comorbidade.view.tree</field>
+        <field name="model">covid.comorbidade</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="codigo_sid"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

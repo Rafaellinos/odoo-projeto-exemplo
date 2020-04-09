@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="corona_main_menu"
+        name="Covid"
+        parent=""
+        sequence="-100"/>
+
+    <menuitem
+        id="covid_diagnostico_menu"
+        name="Diagnostico"
+        action="covid_diagnostico_action"
+        parent="corona_main_menu"
+        sequence="1"/>
+
+    <menuitem
+        id="covid_settings_menu"
+        name="Configurações"
+        parent="corona_main_menu"
+        sequence="5"/>
+
+    <menuitem
+        id="covid_comorbidade_menu"
+        name="Comorbidades"
+        action="corona_virus_action"
+        parent="covid_settings_menu"
+        sequence="1"/>
+
+    <menuitem
+        id="covid_sintomas_menu"
+        name="Sintomas"
+        action="covid_sintomas_action"
+        parent="covid_settings_menu"
+        sequence="5"/>
+
+</odoo>
