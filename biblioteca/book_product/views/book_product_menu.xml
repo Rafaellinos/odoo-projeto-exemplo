@@ -1,0 +1,21 @@
+<odoo>
+    
+    <record id="book_product_main_menu" model="ir.ui.menu">
+        <field name="name">Books</field>
+        <field name="sequence" eval="99"/>
+        <field name="web_icon">sale,static/description/icon.png</field>
+    </record>
+
+    <record id="book_product_submenu" model="ir.ui.menu">
+        <field name="name">Books</field>
+        <field name="sequence" eval="99"/>
+        <field name="parent_id" ref="book_product_main_menu"/>
+    </record>
+
+    <record id="book_product_config" model="ir.ui.menu">
+        <field name="name">Configurações</field>
+        <field name="sequence" eval="999"/>
+        <field name="parent_id" ref="book_product_main_menu"/>
+    </record>
+
+</odoo>

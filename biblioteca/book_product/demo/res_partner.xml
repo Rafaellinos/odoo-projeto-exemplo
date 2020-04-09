@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo noupdate="1">
+
+    <record model="res.partner" id="thiago_nigro">
+       <field name="name">Thiago Nigro</field>
+       <field name="is_author" eval="True"/>
+    </record>
+
+    <record model="res.partner" id="haper_collins">
+       <field name="name">HarperCollins</field>
+       <field name="is_publisher" eval="True"/>
+    </record>
+
+    <record model="res.partner" id="el_james">
+       <field name="name">E. L. James</field>
+       <field name="is_author" eval="True"/>
+    </record>
+
+    <record model="res.partner" id="intrinseca">
+       <field name="name">Intrínseca</field>
+       <field name="is_publisher" eval="True"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo noupdate="1">
+
+    <record model="library.rent.policy" id="library_rent_policy_demo_graduacao_aulas">
+       <field name="name">Gradução Durante as aulas</field>
+       <field name="partner_relation_id" ref="library_base.library_partner_relation_demo_aluno_graduacao"/>
+       <field name="quantity">3</field>
+<!--       <field name="currency_id">...</field>-->
+       <field name="amount_fee">2</field>
+       <field name="rent_days">5</field>
+    </record>
+
+    <record model="library.rent.policy" id="library_rent_policy_demo_graduacao_ferias">
+       <field name="name">Gradução Durante as férias</field>
+       <field name="partner_relation_id" ref="library_base.library_partner_relation_demo_aluno_graduacao"/>
+       <field name="quantity">3</field>
+<!--       <field name="currency_id">...</field>-->
+       <field name="amount_fee">2</field>
+       <field name="rent_days">30</field>
+    </record>
+
+    <record model="library.rent.policy" id="library_rent_policy_demo_pos_graduacao_aulas">
+       <field name="name">Pós Gradução Durante as aulas</field>
+       <field name="partner_relation_id" ref="library_base.library_partner_relation_demo_aluno_pos_graduacao"/>
+       <field name="quantity">3</field>
+<!--       <field name="currency_id">...</field>-->
+       <field name="amount_fee">3</field>
+       <field name="rent_days">15</field>
+    </record>
+
+    <record model="library.rent.policy" id="library_rent_policy_demo_pos_graduacao_ferias">
+       <field name="name">Pós Gradução Durante as férias</field>
+       <field name="partner_relation_id" ref="library_base.library_partner_relation_demo_aluno_pos_graduacao"/>
+       <field name="quantity">3</field>
+<!--       <field name="currency_id">...</field>-->
+       <field name="amount_fee">3</field>
+       <field name="rent_days">60</field>
+    </record>
+
+    <record model="library.rent.policy" id="library_rent_policy_demo_professor_aulas">
+       <field name="name">Professor Durante as aulas</field>
+       <field name="partner_relation_id" ref="library_base.library_partner_relation_demo_professor"/>
+       <field name="quantity">5</field>
+<!--       <field name="currency_id">...</field>-->
+       <field name="amount_fee">5</field>
+       <field name="rent_days">15</field>
+    </record>
+
+    <record model="library.rent.policy" id="library_rent_policy_demo_professor_ferias">
+       <field name="name">Professor Durante as férias</field>
+       <field name="partner_relation_id" ref="library_base.library_partner_relation_demo_professor"/>
+       <field name="quantity">5</field>
+<!--       <field name="currency_id">...</field>-->
+       <field name="amount_fee">5</field>
+       <field name="rent_days">60</field>
+    </record>
+
+    <record model="library.rent.policy" id="library_rent_policy_demo_funcionário">
+       <field name="name">Funcionário</field>
+       <field name="partner_relation_id" ref="library_base.library_partner_relation_demo_aluno_servidor_funcionario"/>
+       <field name="quantity">3</field>
+<!--       <field name="currency_id">...</field>-->
+       <field name="amount_fee">3</field>
+       <field name="rent_days">10</field>
+    </record>
+
+</odoo>

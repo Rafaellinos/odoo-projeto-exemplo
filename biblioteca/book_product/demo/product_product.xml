@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo >
+<!--<odoo noupdate="1">-->
+
+    <record model="product.product" id="product.product_product_9">
+       <field name="name">Homo Deus</field>
+       <field name="isbn">9788535928198</field>
+    </record>
+
+    <record id="book_do_mil_ao_milhao" model="product.product">
+        <field name="name">Do Mil ao Milhão. Sem Cortar o Cafezinho. </field>
+        <field name="categ_id" ref="product.product_category_5"/>
+        <field name="standard_price">27.90</field>
+        <field name="list_price">27.90</field>
+        <field name="type">consu</field>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+        <field name="barcode">9788595083271</field>
+        <field name="isbn">8595083274</field>
+        <field name="image" type="base64" file="book_product/static/img/thiago.jpg"/>
+        <field name="author_ids"  eval='[(4,ref("thiago_nigro"))]'/>
+        <field name="editor_id"  ref="haper_collins"/>
+    </record>
+
+    <record id="cinquenta_tons_de_cinza" model="product.product">
+        <field name="name">Cinquenta Tons de Cinza</field>
+        <field name="categ_id" ref="product.product_category_5"/>
+        <field name="standard_price">27.90</field>
+        <field name="list_price">27.90</field>
+        <field name="type">consu</field>
+        <field name="uom_id" ref="uom.product_uom_unit"/>
+        <field name="uom_po_id" ref="uom.product_uom_unit"/>
+        <field name="barcode">9788580572186</field>
+        <field name="isbn">8580572185</field>
+        <field name="author_ids"  eval='[(4,ref("el_james"))]'/>
+        <field name="editor_id"  ref="intrinseca"/>
+    </record>
+
+    <function model="product.product" name="onchange_isbn">
+        <value eval="[ref('product.product_product_9'), ref('book_do_mil_ao_milhao'), ref('cinquenta_tons_de_cinza')]"/>
+    </function>
+
+</odoo>

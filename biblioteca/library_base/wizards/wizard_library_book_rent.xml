@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="wizard_library_book_rent_form_view">
+        <field name="name">wizard.library.book.rent.form (in library_base)</field>
+        <field name="model">wizard.library.book.rent</field>
+        <field name="arch" type="xml">
+            <form string="Wizard Library Book Rent">
+                <!-- TODO -->
+                <group>
+                    <field name="partner_id" required="1"/>
+                    <field name="count_book_rented" required="1"/>
+                    <field name="book_asset_id"/>
+                    <field name="line_ids">
+                        <tree>
+                            <field name="rent_id" invisible="1"/>
+                            <field name="book_asset_id"/>
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                    <button name="doit"
+                            string="Salvar e ver alugueis"
+                            class="btn-primary"
+                            type="object"/>
+                    <button name="doit"
+                            string="Salvar e criar um novo"
+                            class="btn-primary"
+                            type="object" context="{'save_and_create': True}"/>
+                    <button string="Cancel"
+                            class="btn-default"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="wizard_library_book_rent_act_window">
+        <field name="name">Novo Aluguel</field> <!-- TODO -->
+        <field name="res_model">wizard.library.book.rent</field>
+        <field name="view_mode">form</field>
+        <field name="context">{}</field>
+        <field name="target">new</field> <!-- Para os Wizards -->
+    </record>
+
+    <record model="ir.ui.menu" id="wizard_library_book_rent_menu">
+        <field name="name">Novo Aluguel</field>
+        <field name="parent_id" ref="book_product.book_product_main_menu"/> <!-- TODO -->
+        <field name="action" ref="wizard_library_book_rent_act_window"/>
+        <field name="sequence" eval="120"/> <!-- TODO -->
+    </record>
+</odoo>

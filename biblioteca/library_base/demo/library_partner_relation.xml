@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo noupdate="1">
+
+    <record model="library.partner.relation" id="library_partner_relation_demo_aluno_graduacao">
+        <field name="name">Aluno Graduação</field>
+    </record>
+    <record model="library.partner.relation" id="library_partner_relation_demo_aluno_pos_graduacao">
+        <field name="name">Aluno Pós Graduação</field>
+    </record>
+    <record model="library.partner.relation" id="library_partner_relation_demo_professor">
+        <field name="name">Professor</field>
+    </record>
+    <record model="library.partner.relation" id="library_partner_relation_demo_aluno_servidor_funcionario">
+        <field name="name">Servidor / Fuincionário</field>
+    </record>
+
+</odoo>

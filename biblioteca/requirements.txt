@@ -1,0 +1,2 @@
+isbn-hyphenate==1.0.4
+is-isbn==0.1.0

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="product_product_form_view">
+        <field name="name">product.product.form (in book_product)</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view"/>
+        <field name="arch" type="xml">
+            <field name="barcode" position="before">
+                <field name="isbn"/>
+            </field>
+            <field name="categ_id" position="after">
+                <field name="author_ids" widget="many2many_tags"/>
+                <field name="editor_id"/>
+            </field>
+        </field>
+    </record>
+
+<!--    <record model="ir.ui.view" id="product_product_search_view">-->
+<!--        <field name="name">product.product.search (in book_product)</field>-->
+<!--        <field name="model">product.product</field>-->
+<!--        <field name="inherit_id" ref="TODO othermodule.search_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash; TODO &ndash;&gt;-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record model="ir.ui.view" id="product_product_tree_view">-->
+<!--        <field name="name">product.product.tree (in book_product)</field>-->
+<!--        <field name="model">product.product</field>-->
+<!--        <field name="inherit_id" ref="TODO othermodule.tree_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            &lt;!&ndash; TODO &ndash;&gt;-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record model="ir.actions.act_window" id="product_product_act_window">-->
+<!--        <field name="name">Product Product</field> &lt;!&ndash; TODO &ndash;&gt;-->
+<!--        <field name="res_model">product.product</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--        <field name="domain">[]</field>-->
+<!--        <field name="context">{}</field>-->
+<!--    </record>-->
+
+    <record model="ir.ui.menu" id="product_product_menu">
+        <field name="name">Books</field>
+        <field name="parent_id" ref="book_product_submenu"/> <!-- TODO -->
+        <field name="action" ref="product.product_normal_action"/>
+        <field name="sequence" eval="16"/> <!-- TODO -->
+    </record>
+
+</odoo>

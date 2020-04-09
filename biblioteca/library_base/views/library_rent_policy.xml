@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="library_rent_policy_form_view">
+        <field name="name">library.rent.policy.form (in library_base)</field>
+        <field name="model">library.rent.policy</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- TODO -->
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="partner_relation_id"/>
+                        </group>
+                        <group>
+                            <field name="quantity"/>
+                            <field name="rent_days"/>
+                            <field name="currency_id" readonly="1"/>
+                            <field name="amount_fee"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter"></div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="library_rent_policy_search_view">
+        <field name="name">library.rent.policy.search (in library_base)</field>
+        <field name="model">library.rent.policy</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="partner_relation_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="library_rent_policy_tree_view">
+        <field name="name">library.rent.policy.tree (in library_base)</field>
+        <field name="model">library.rent.policy</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="partner_relation_id"/>
+                <field name="quantity"/>
+                <field name="amount_fee"/>
+                <field name="rent_days"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="library_rent_policy_act_window">
+        <field name="name">Politica de Aluguel</field> <!-- TODO -->
+        <field name="res_model">library.rent.policy</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="library_rent_policy_menu">
+        <field name="name">Politica de Aluguel</field>
+        <field name="parent_id" ref="book_product.book_product_config"/> <!-- TODO -->
+        <field name="action" ref="library_rent_policy_act_window"/>
+        <field name="sequence" eval="26"/> <!-- TODO -->
+    </record>
+
+</odoo>

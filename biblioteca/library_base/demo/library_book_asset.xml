@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo noupdate="1">
+
+
+    <record model="library.book.asset" id="book_do_mil_ao_milhao_asset_1">
+        <field name="book_id" ref="book_product.book_do_mil_ao_milhao"/>
+    </record>
+    <record model="library.book.asset" id="book_do_mil_ao_milhao_asset_2">
+        <field name="book_id" ref="book_product.book_do_mil_ao_milhao"/>
+    </record>
+    <record model="library.book.asset" id="book_do_mil_ao_milhao_asset_3">
+        <field name="book_id" ref="book_product.book_do_mil_ao_milhao"/>
+    </record>
+    <record model="library.book.asset" id="book_do_mil_ao_milhao_asset_4">
+        <field name="book_id" ref="book_product.book_do_mil_ao_milhao"/>
+    </record>
+    <record model="library.book.asset" id="book_do_mil_ao_milhao_asset_5">
+        <field name="book_id" ref="book_product.book_do_mil_ao_milhao"/>
+    </record>
+    <record model="library.book.asset" id="book_do_mil_ao_milhao_asset_6">
+        <field name="book_id" ref="book_product.book_do_mil_ao_milhao"/>
+    </record>
+    <record model="library.book.asset" id="book_do_mil_ao_milhao_asset_7">
+        <field name="book_id" ref="book_product.book_do_mil_ao_milhao"/>
+    </record>
+
+    <record model="library.book.asset" id="cinquenta_tons_de_cinza_asset_1">
+        <field name="book_id" ref="book_product.cinquenta_tons_de_cinza"/>
+    </record>
+    <record model="library.book.asset" id="cinquenta_tons_de_cinza_asset_2">
+        <field name="book_id" ref="book_product.cinquenta_tons_de_cinza"/>
+    </record>
+    <record model="library.book.asset" id="cinquenta_tons_de_cinza_asset_3">
+        <field name="book_id" ref="book_product.cinquenta_tons_de_cinza"/>
+    </record>
+    <record model="library.book.asset" id="cinquenta_tons_de_cinza_asset_4">
+        <field name="book_id" ref="book_product.cinquenta_tons_de_cinza"/>
+    </record>
+    <record model="library.book.asset" id="cinquenta_tons_de_cinza_asset_5">
+        <field name="book_id" ref="book_product.cinquenta_tons_de_cinza"/>
+    </record>
+    <record model="library.book.asset" id="cinquenta_tons_de_cinza_asset_6">
+        <field name="book_id" ref="book_product.cinquenta_tons_de_cinza"/>
+    </record>
+    <record model="library.book.asset" id="cinquenta_tons_de_cinza_asset_7">
+        <field name="book_id" ref="book_product.cinquenta_tons_de_cinza"/>
+    </record>
+
+
+</odoo>

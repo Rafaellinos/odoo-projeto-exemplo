@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="library_book_asset_form_view">
+        <field name="name">library.book.asset.form (in library_base)</field>
+        <field name="model">library.book.asset</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <field name="name" />
+                    </h1>
+                    <h2>
+                        <field name="book_id" context="{'display_default_code': False}"/>
+                    </h2>
+                    <group name="main">
+                        <group name="left">
+                            <field name="shelf"/>
+                            <field name="session"/>
+                        </group>
+                        <group name="right">
+                            <field name="currency_id" readonly="1"/>
+                            <field name="price_unit"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter"></div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="library_book_asset_search_view">
+        <field name="name">library.book.asset.search (in library_base)</field>
+        <field name="model">library.book.asset</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="book_id"/>
+                <field name="shelf"/>
+                <field name="session"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="library_book_asset_tree_view">
+        <field name="name">library.book.asset.tree (in library_base)</field>
+        <field name="model">library.book.asset</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="book_id"/>
+                <field name="shelf"/>
+                <field name="session"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="library_book_asset_act_window">
+        <field name="name">Book Asset</field> <!-- TODO -->
+        <field name="res_model">library.book.asset</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="library_book_asset_menu">
+        <field name="name">Book Asset</field>
+        <field name="parent_id" ref="book_product.book_product_submenu"/> <!-- TODO -->
+        <field name="action" ref="library_book_asset_act_window"/>
+        <field name="sequence" eval="1"/> <!-- TODO -->
+    </record>
+
+</odoo>

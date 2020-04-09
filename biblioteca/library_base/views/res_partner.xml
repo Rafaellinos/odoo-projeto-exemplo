@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="res_partner_form_view">
+        <field name="name">res.partner.form (in library_base)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="function" position="before">
+                <field name="is_internal" invisible="1"/>
+                <field name="partner_relation_id" attrs="{'required': [('is_internal', '=', True)]}"/>
+            </field>
+            <button name="toggle_active" position="after">
+                <button class="oe_stat_button" type="action" string="Alugar Livro" name="%(wizard_library_book_rent_act_window)d" icon="fa-book"
+                    context="{'default_partner_id': active_id}"
+                />
+
+
+                <button type="object" class="oe_stat_button" icon="fa-book" name="action_view_partner_rented_books"
+                        attrs="{'invisible': [('is_internal', '=', False)]}" context="{'default_partner_id': active_id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="count_book_rented"/>
+                            </span>
+                            <span class="o_stat_text">Rented</span>
+                        </div>
+                </button>
+
+                <button type="object" class="oe_stat_button" icon="fa-book" name="action_view_partner_all_books"
+                        attrs="{'invisible': [('is_internal', '=', False)]}" context="{'default_partner_id': active_id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="count_book_all"/>
+                            </span>
+                            <span class="o_stat_text">All Rented</span>
+                        </div>
+                </button>
+
+            </button>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_partner_search_view">
+        <field name="name">res.partner.search (in library_base)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="partner_relation_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_partner_tree_view">
+        <field name="name">res.partner.tree (in library_base)</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
+                <field name="partner_relation_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="res_partner_act_window">
+        <field name="name">Pessoas</field> <!-- TODO -->
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_internal', '=', True)]</field>
+        <field name="context">{'default_is_internal': True, 'defaut_company_type': 'person'}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="res_partner_menu">
+        <field name="name">Pessoas</field>
+        <field name="parent_id" ref="book_product.book_product_main_menu"/> <!-- TODO -->
+        <field name="action" ref="res_partner_act_window"/>
+        <field name="sequence" eval="120"/> <!-- TODO -->
+    </record>
+
+</odoo>

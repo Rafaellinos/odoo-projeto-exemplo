@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="library_partner_relation_form_view">
+        <field name="name">library.partner.relation.form (in library_base)</field>
+        <field name="model">library.partner.relation</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter"></div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="library_partner_relation_search_view">
+        <field name="name">library.partner.relation.search (in library_base)</field>
+        <field name="model">library.partner.relation</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="library_partner_relation_tree_view">
+        <field name="name">library.partner.relation.tree (in library_base)</field>
+        <field name="model">library.partner.relation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="library_partner_relation_act_window">
+        <field name="name">Tipo de Vinculo</field> <!-- TODO -->
+        <field name="res_model">library.partner.relation</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="library_partner_relation_menu">
+        <field name="name">Tipos de Vinculo</field>
+        <field name="parent_id" ref="book_product.book_product_config"/> <!-- TODO -->
+        <field name="action" ref="library_partner_relation_act_window"/>
+        <field name="sequence" eval="16"/> <!-- TODO -->
+    </record>
+
+</odoo>

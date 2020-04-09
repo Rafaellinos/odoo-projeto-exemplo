@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo noupdate="1">
+
+    <record model="res.partner" id="res_partner_demo_graduacao_joaozinho">
+        <field name="name">Aluno Gradução Joãozinho</field>
+        <field name="is_internal" eval="True"/>
+        <field name="partner_relation_id" ref="library_partner_relation_demo_aluno_graduacao"/>
+    </record>
+
+    <record model="res.partner" id="res_partner_demo_graduacao_maria">
+        <field name="name">Aluno Gradução Maria</field>
+        <field name="is_internal" eval="True"/>
+        <field name="partner_relation_id" ref="library_partner_relation_demo_aluno_graduacao"/>
+    </record>
+
+    <record model="res.partner" id="res_partner_demo_pos_graduacao_cesar">
+        <field name="name">Aluno Gradução Cesar</field>
+        <field name="is_internal" eval="True"/>
+        <field name="partner_relation_id" ref="library_partner_relation_demo_aluno_pos_graduacao"/>
+    </record>
+
+    <record model="res.partner" id="res_partner_demo_pos_graduacao_lamar">
+        <field name="name">Aluno Pos Gradução Lamar</field>
+        <field name="is_internal" eval="True"/>
+        <field name="partner_relation_id" ref="library_partner_relation_demo_aluno_pos_graduacao"/>
+    </record>
+
+    <record model="res.partner" id="res_partner_demo_pos_professor_1">
+        <field name="name">Professor 1</field>
+        <field name="is_internal" eval="True"/>
+        <field name="partner_relation_id" ref="library_partner_relation_demo_professor"/>
+    </record>
+
+    <record model="res.partner" id="res_partner_demo_servidor">
+        <field name="name">Funcionário 1 / Servidor</field>
+        <field name="is_internal" eval="True"/>
+        <field name="partner_relation_id" ref="library_partner_relation_demo_aluno_servidor_funcionario"/>
+    </record>
+
+</odoo>

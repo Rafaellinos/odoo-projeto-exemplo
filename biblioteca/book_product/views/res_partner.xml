@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 KMEE
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="res_partner_form_view">
+        <field name="name">res.partner.form (in book_product)</field>
+        <field name="model">res.partner</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="100"/>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <page name="sales_purchases" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </page>
+            <page name="sales_purchases" position="after">
+                <page name="book" string="Book">
+                    <group>
+                        <field name="is_author"/>
+                        <field name="is_publisher"/>
+                    </group>
+                        <field name="author_book_ids" attrs="{
+                                'invisible': [('is_author','!=',True)],
+                             }"/>
+                        <field name="editor_book_ids" attrs="{
+                                'invisible': [('is_publisher','!=',True)],
+                             }"/>
+                </page>
+            </page>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="res_partner_publisher_act_window">
+        <field name="name">Editoras</field> <!-- TODO -->
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_publisher', '=', True)]</field>
+        <field name="context">{'default_is_publisher': True}</field>
+    </record>
+
+    <record id="res_partner_publisher_act_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">form</field>
+            <field name="act_window_id" ref="res_partner_publisher_act_window"/>
+            <field name="view_id" ref="res_partner_form_view"/>
+    </record>
+
+    <record id="res_partner_publisher_act_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="act_window_id" ref="res_partner_publisher_act_window"/>
+            <field name="view_id" ref="base.view_partner_tree"/>
+    </record>
+
+
+    <record model="ir.ui.menu" id="res_partner_publisher_menu">
+        <field name="name">Editoras</field>
+        <field name="parent_id" ref="book_product_submenu"/> <!-- TODO -->
+        <field name="action" ref="res_partner_publisher_act_window"/>
+        <field name="sequence" eval="46"/> <!-- TODO -->
+    </record>
+
+    <record model="ir.actions.act_window" id="res_partner_author_act_window">
+        <field name="name">Autores</field> <!-- TODO -->
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_author', '=', True)]</field>
+        <field name="context">{'default_is_author': True}</field>
+    </record>
+
+    <record id="res_partner_author_act_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">form</field>
+            <field name="act_window_id" ref="res_partner_author_act_window"/>
+            <field name="view_id" ref="res_partner_form_view"/>
+    </record>
+
+    <record id="res_partner_author_act_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="act_window_id" ref="res_partner_author_act_window"/>
+            <field name="view_id" ref="base.view_partner_tree"/>
+    </record>
+
+
+    <record model="ir.ui.menu" id="res_partner_author_menu">
+        <field name="name">Autores</field>
+        <field name="parent_id" ref="book_product_submenu"/> <!-- TODO -->
+        <field name="action" ref="res_partner_author_act_window"/>
+        <field name="sequence" eval="10"/> <!-- TODO -->
+    </record>
+
+</odoo>
